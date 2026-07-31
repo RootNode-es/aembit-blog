@@ -6,8 +6,8 @@ const app = express()
 app.use(express.urlencoded({ extended: true })) // needed to read the button's form POST
 const PORT = 8000
 
-const CLIENT_ID = "Ov23ligYc1KuGfeOwW4U"
-const CLIENT_SECRET = "473b3e7102116ca5a8a624f6c291e07ef5707efe"
+const CLIENT_ID = "CLIENT_ID"
+const CLIENT_SECRET = "CLIENT_SECRET"
 const REDIRECT_URI = "http://localhost:8000/callback" // must exactly match what you registered
 
 const GITHUB_AUTHORIZE_URL = "https://github.com/login/oauth/authorize"
@@ -15,6 +15,7 @@ const GITHUB_TOKEN_URL = "https://github.com/login/oauth/access_token"
 
 const pendingStates = new Set()
 
+// First endpoint: Client home page, redirects to Github credentials page (Step 3)
 app.get("/", (req, res) => {
   const state = crypto.randomBytes(8).toString("hex")
   pendingStates.add(state)
@@ -25,24 +26,25 @@ app.get("/", (req, res) => {
   url.searchParams.set("scope", "read:user") // just enough to read the profile
   url.searchParams.set("state", state)
 
-  console.log("\n=== LEG 1: sending user to GitHub's /authorize ===")
+  console.log("\n=== Step 3: sending user to GitHub's /authorize ===")
   console.log("client_id     :", CLIENT_ID)
   console.log("redirect_uri  :", REDIRECT_URI)
   console.log("scope         :", "read:user")
   console.log(
     "state (ours)  :",
     state,
-    "  <- generated now, must come back unchanged in Leg 2",
+    "  <- generated now, must come back unchanged in Step 5",
   )
   console.log("full authorize URL:", url.toString())
 
   res.send(`<a href="${url.toString()}">Log in with GitHub</a>`)
 })
 
+// Second endpoint: callback. Authorization Server returns here with an Authorization Code
 app.get("/callback", async (req, res) => {
   const { code, state, error, error_description } = req.query
 
-  console.log("\n=== LEG 2: GitHub redirected back to /callback ===")
+  console.log("\n=== Step 4: GitHub redirected back to /callback ===")
   console.log(
     "authorization code:",
     code,
@@ -66,11 +68,11 @@ app.get("/callback", async (req, res) => {
       .status(400)
       .send("Invalid or missing state — possible CSRF, aborting.")
   }
-  console.log("state check passed — matches the value generated in Leg 1")
+  console.log("state check passed — matches the value generated in Step 3")
   pendingStates.delete(state)
 
   res.send(`
-    <h2>Leg 2 complete</h2>
+    <h2>Step 5 complete</h2>
     <p>GitHub redirected the browser back here with an authorization code:</p>
     <pre>${code}</pre>
     <p>Clicking the button below to trade this authorization code for an access token.</p>
@@ -81,11 +83,12 @@ app.get("/callback", async (req, res) => {
   `)
 })
 
+// Third endpoint: Exchange Token. When accessed, exchanges an Authorization code for an Access Token (steps 6 and 7)
 app.post("/exchange-token", async (req, res) => {
   const { code } = req.body
 
   console.log(
-    "\n=== LEG 3: exchanging the code for a token (server-to-server) ===",
+    "\n=== Starting step 6: exchanging the code for a token (server-to-server) ===",
   )
   console.log("POST", GITHUB_TOKEN_URL)
   console.log("sending code       :", code)
@@ -124,7 +127,7 @@ app.post("/exchange-token", async (req, res) => {
   console.log("scope granted        :", tokens.scope)
 
   res.send(`
-    <h2>Leg 3 complete</h2>
+    <h2>Step 7 complete</h2>
     <p>Token response from GitHub's /login/oauth/access_token:</p>
     <pre>${JSON.stringify(tokens, null, 2)}</pre>
   `)
