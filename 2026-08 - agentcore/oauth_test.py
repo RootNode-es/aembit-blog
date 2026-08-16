@@ -4,7 +4,7 @@ from bedrock_agentcore.services.identity import IdentityClient
 REGION = "us-east-1"
 WORKLOAD = "ec2-github-demo-agent"
 USER_ID = "ec2-test-user"
-PROVIDER = "oauth-client-qexzl"
+PROVIDER = "oauth-client"
 
 print(f"Region:   {REGION}")
 print(f"Workload: {WORKLOAD}")
