@@ -6,7 +6,6 @@ from urllib.parse import urlparse, parse_qs
 import boto3
 from bedrock_agentcore.services.identity import IdentityClient
 
-
 # ============================================================
 # Configuration
 # ============================================================
@@ -216,14 +215,13 @@ def start_callback_server():
 
 server = start_callback_server()
 
-
 # ============================================================
-# Step 1 - Get workload access token
+# Step 2 - Get workload access token
 # ============================================================
 
 print()
 print("=" * 70)
-print("STEP 1 - GET WORKLOAD ACCESS TOKEN")
+print("STEP 2 - GET WORKLOAD ACCESS TOKEN")
 print("=" * 70)
 
 result = identity.get_workload_access_token(
@@ -249,14 +247,13 @@ print(
     len(workload_token) if workload_token else 0,
 )
 
-
 # ============================================================
-# Step 2 - Start OAuth flow
+# Step 4 - Start OAuth flow with get_resource_oauth2_token
 # ============================================================
 
 print()
 print("=" * 70)
-print("STEP 2 - START GITHUB OAUTH FLOW")
+print("STEP 4 - START GITHUB OAUTH FLOW")
 print("=" * 70)
 
 response = client.get_resource_oauth2_token(
@@ -271,18 +268,16 @@ response = client.get_resource_oauth2_token(
 print()
 print("Response keys:", list(response.keys()))
 
-
 if "authorizationUrl" not in response:
     print("No authorization URL was returned.")
     print(response)
     raise SystemExit(1)
 
-
 authorization_url = response["authorizationUrl"]
 
 print()
 print("=" * 70)
-print("STEP 3 - AUTHORIZE WITH GITHUB")
+print("STEP 6 - AUTHORIZE WITH GITHUB")
 print("=" * 70)
 
 print()
@@ -291,13 +286,12 @@ print()
 print(authorization_url)
 print()
 
-
 # ============================================================
 # Step 4 - Wait for callback
 # ============================================================
 
 print("=" * 70)
-print("STEP 4 - WAITING FOR GITHUB CALLBACK")
+print("STEP 7 - WAITING FOR GITHUB CALLBACK")
 print("=" * 70)
 
 print()
@@ -311,7 +305,7 @@ oauth_completed.wait()
 
 print()
 print("=" * 70)
-print("STEP 5 - OAUTH FLOW COMPLETED")
+print("STEP 9 - OAUTH FLOW COMPLETED")
 print("=" * 70)
 
 print()
@@ -341,15 +335,13 @@ token_response = client.get_resource_oauth2_token(
 print()
 print("Response keys:", list(token_response.keys()))
 
-
 # The exact field should be inspected rather than printing
 # the credential itself.
 github_access_token = token_response.get("accessToken")
 
-
 print()
 print("=" * 70)
-print("STEP 7 - GITHUB ACCESS TOKEN")
+print("STEP 10 - GITHUB ACCESS TOKEN")
 print("=" * 70)
 
 print()
