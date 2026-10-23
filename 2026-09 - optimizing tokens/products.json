@@ -1,0 +1,804 @@
+{
+  "products": [
+    {
+      "id": "SKU-1000",
+      "name": "Ultra Runner 0",
+      "category": "Training",
+      "color": "White",
+      "price": 64.64,
+      "stock": 377
+    },
+    {
+      "id": "SKU-1001",
+      "name": "Ultra Tee 1",
+      "category": "Running",
+      "color": "Grey",
+      "price": 104.38,
+      "stock": 15
+    },
+    {
+      "id": "SKU-1002",
+      "name": "Ultra Trainer 2",
+      "category": "Football",
+      "color": "Grey",
+      "price": 140.4,
+      "stock": 287
+    },
+    {
+      "id": "SKU-1003",
+      "name": "Pro Tee 3",
+      "category": "Outdoor",
+      "color": "White",
+      "price": 109.84,
+      "stock": 142
+    },
+    {
+      "id": "SKU-1004",
+      "name": "Ultra Trainer 4",
+      "category": "Outdoor",
+      "color": "Blue",
+      "price": 75.57,
+      "stock": 110
+    },
+    {
+      "id": "SKU-1005",
+      "name": "Flex Runner 5",
+      "category": "Running",
+      "color": "Red",
+      "price": 39.34,
+      "stock": 433
+    },
+    {
+      "id": "SKU-1006",
+      "name": "Flex Tee 6",
+      "category": "Training",
+      "color": "Black",
+      "price": 165.95,
+      "stock": 274
+    },
+    {
+      "id": "SKU-1007",
+      "name": "Ultra Jacket 7",
+      "category": "Running",
+      "color": "Grey",
+      "price": 78.64,
+      "stock": 321
+    },
+    {
+      "id": "SKU-1008",
+      "name": "Core Boot 8",
+      "category": "Lifestyle",
+      "color": "White",
+      "price": 160.91,
+      "stock": 23
+    },
+    {
+      "id": "SKU-1009",
+      "name": "Pro Boot 9",
+      "category": "Running",
+      "color": "White",
+      "price": 193.3,
+      "stock": 194
+    },
+    {
+      "id": "SKU-1010",
+      "name": "Flex Jacket 10",
+      "category": "Training",
+      "color": "White",
+      "price": 94.04,
+      "stock": 107
+    },
+    {
+      "id": "SKU-1011",
+      "name": "Flex Runner 11",
+      "category": "Lifestyle",
+      "color": "White",
+      "price": 126.83,
+      "stock": 125
+    },
+    {
+      "id": "SKU-1012",
+      "name": "Pro Jacket 12",
+      "category": "Outdoor",
+      "color": "Blue",
+      "price": 217.9,
+      "stock": 327
+    },
+    {
+      "id": "SKU-1013",
+      "name": "Core Trainer 13",
+      "category": "Training",
+      "color": "Black",
+      "price": 65.81,
+      "stock": 16
+    },
+    {
+      "id": "SKU-1014",
+      "name": "Flex Jacket 14",
+      "category": "Training",
+      "color": "Black",
+      "price": 62.2,
+      "stock": 482
+    },
+    {
+      "id": "SKU-1015",
+      "name": "Core Boot 15",
+      "category": "Football",
+      "color": "Red",
+      "price": 99.13,
+      "stock": 468
+    },
+    {
+      "id": "SKU-1016",
+      "name": "Aero Trainer 16",
+      "category": "Training",
+      "color": "White",
+      "price": 69.33,
+      "stock": 287
+    },
+    {
+      "id": "SKU-1017",
+      "name": "Core Boot 17",
+      "category": "Lifestyle",
+      "color": "Red",
+      "price": 199.56,
+      "stock": 204
+    },
+    {
+      "id": "SKU-1018",
+      "name": "Flex Trainer 18",
+      "category": "Football",
+      "color": "Grey",
+      "price": 118.7,
+      "stock": 386
+    },
+    {
+      "id": "SKU-1019",
+      "name": "Ultra Runner 19",
+      "category": "Football",
+      "color": "White",
+      "price": 178.42,
+      "stock": 216
+    },
+    {
+      "id": "SKU-1020",
+      "name": "Core Runner 20",
+      "category": "Outdoor",
+      "color": "Red",
+      "price": 139.18,
+      "stock": 239
+    },
+    {
+      "id": "SKU-1021",
+      "name": "Core Boot 21",
+      "category": "Lifestyle",
+      "color": "Black",
+      "price": 156.06,
+      "stock": 58
+    },
+    {
+      "id": "SKU-1022",
+      "name": "Core Boot 22",
+      "category": "Training",
+      "color": "Black",
+      "price": 78.7,
+      "stock": 80
+    },
+    {
+      "id": "SKU-1023",
+      "name": "Aero Runner 23",
+      "category": "Training",
+      "color": "Grey",
+      "price": 172.39,
+      "stock": 259
+    },
+    {
+      "id": "SKU-1024",
+      "name": "Ultra Boot 24",
+      "category": "Lifestyle",
+      "color": "Grey",
+      "price": 59.78,
+      "stock": 191
+    },
+    {
+      "id": "SKU-1025",
+      "name": "Pro Tee 25",
+      "category": "Lifestyle",
+      "color": "Black",
+      "price": 139.79,
+      "stock": 250
+    },
+    {
+      "id": "SKU-1026",
+      "name": "Ultra Runner 26",
+      "category": "Training",
+      "color": "Blue",
+      "price": 67.89,
+      "stock": 123
+    },
+    {
+      "id": "SKU-1027",
+      "name": "Core Runner 27",
+      "category": "Running",
+      "color": "Red",
+      "price": 183.2,
+      "stock": 500
+    },
+    {
+      "id": "SKU-1028",
+      "name": "Core Trainer 28",
+      "category": "Football",
+      "color": "Red",
+      "price": 209.37,
+      "stock": 84
+    },
+    {
+      "id": "SKU-1029",
+      "name": "Flex Tee 29",
+      "category": "Lifestyle",
+      "color": "Red",
+      "price": 212.87,
+      "stock": 475
+    },
+    {
+      "id": "SKU-1030",
+      "name": "Core Trainer 30",
+      "category": "Training",
+      "color": "Red",
+      "price": 219.03,
+      "stock": 332
+    },
+    {
+      "id": "SKU-1031",
+      "name": "Flex Jacket 31",
+      "category": "Lifestyle",
+      "color": "Red",
+      "price": 44.2,
+      "stock": 115
+    },
+    {
+      "id": "SKU-1032",
+      "name": "Ultra Boot 32",
+      "category": "Running",
+      "color": "Grey",
+      "price": 130.78,
+      "stock": 301
+    },
+    {
+      "id": "SKU-1033",
+      "name": "Pro Runner 33",
+      "category": "Running",
+      "color": "Black",
+      "price": 65.79,
+      "stock": 463
+    },
+    {
+      "id": "SKU-1034",
+      "name": "Ultra Boot 34",
+      "category": "Running",
+      "color": "Grey",
+      "price": 67.6,
+      "stock": 342
+    },
+    {
+      "id": "SKU-1035",
+      "name": "Aero Trainer 35",
+      "category": "Lifestyle",
+      "color": "White",
+      "price": 164.67,
+      "stock": 451
+    },
+    {
+      "id": "SKU-1036",
+      "name": "Core Tee 36",
+      "category": "Outdoor",
+      "color": "White",
+      "price": 176.92,
+      "stock": 413
+    },
+    {
+      "id": "SKU-1037",
+      "name": "Aero Trainer 37",
+      "category": "Running",
+      "color": "Black",
+      "price": 151.8,
+      "stock": 181
+    },
+    {
+      "id": "SKU-1038",
+      "name": "Aero Jacket 38",
+      "category": "Outdoor",
+      "color": "Black",
+      "price": 154.67,
+      "stock": 330
+    },
+    {
+      "id": "SKU-1039",
+      "name": "Ultra Runner 39",
+      "category": "Outdoor",
+      "color": "Blue",
+      "price": 180.12,
+      "stock": 55
+    },
+    {
+      "id": "SKU-1040",
+      "name": "Pro Trainer 40",
+      "category": "Football",
+      "color": "Grey",
+      "price": 109.72,
+      "stock": 216
+    },
+    {
+      "id": "SKU-1041",
+      "name": "Pro Boot 41",
+      "category": "Outdoor",
+      "color": "White",
+      "price": 194.9,
+      "stock": 38
+    },
+    {
+      "id": "SKU-1042",
+      "name": "Aero Tee 42",
+      "category": "Running",
+      "color": "Black",
+      "price": 150.43,
+      "stock": 276
+    },
+    {
+      "id": "SKU-1043",
+      "name": "Ultra Runner 43",
+      "category": "Football",
+      "color": "White",
+      "price": 101.28,
+      "stock": 246
+    },
+    {
+      "id": "SKU-1044",
+      "name": "Pro Jacket 44",
+      "category": "Running",
+      "color": "White",
+      "price": 95.79,
+      "stock": 199
+    },
+    {
+      "id": "SKU-1045",
+      "name": "Flex Jacket 45",
+      "category": "Training",
+      "color": "Red",
+      "price": 159.32,
+      "stock": 374
+    },
+    {
+      "id": "SKU-1046",
+      "name": "Core Jacket 46",
+      "category": "Football",
+      "color": "White",
+      "price": 79.34,
+      "stock": 495
+    },
+    {
+      "id": "SKU-1047",
+      "name": "Ultra Tee 47",
+      "category": "Lifestyle",
+      "color": "Black",
+      "price": 169.6,
+      "stock": 29
+    },
+    {
+      "id": "SKU-1048",
+      "name": "Ultra Tee 48",
+      "category": "Outdoor",
+      "color": "Grey",
+      "price": 203.88,
+      "stock": 271
+    },
+    {
+      "id": "SKU-1049",
+      "name": "Pro Runner 49",
+      "category": "Lifestyle",
+      "color": "Black",
+      "price": 190.27,
+      "stock": 35
+    },
+    {
+      "id": "SKU-1050",
+      "name": "Core Runner 50",
+      "category": "Football",
+      "color": "Red",
+      "price": 43.98,
+      "stock": 455
+    },
+    {
+      "id": "SKU-1051",
+      "name": "Core Trainer 51",
+      "category": "Lifestyle",
+      "color": "Grey",
+      "price": 27.95,
+      "stock": 41
+    },
+    {
+      "id": "SKU-1052",
+      "name": "Aero Tee 52",
+      "category": "Lifestyle",
+      "color": "Grey",
+      "price": 83.27,
+      "stock": 133
+    },
+    {
+      "id": "SKU-1053",
+      "name": "Pro Boot 53",
+      "category": "Football",
+      "color": "Blue",
+      "price": 99.16,
+      "stock": 343
+    },
+    {
+      "id": "SKU-1054",
+      "name": "Flex Jacket 54",
+      "category": "Training",
+      "color": "Black",
+      "price": 21.86,
+      "stock": 318
+    },
+    {
+      "id": "SKU-1055",
+      "name": "Core Runner 55",
+      "category": "Running",
+      "color": "Grey",
+      "price": 62.63,
+      "stock": 135
+    },
+    {
+      "id": "SKU-1056",
+      "name": "Pro Boot 56",
+      "category": "Running",
+      "color": "White",
+      "price": 93.91,
+      "stock": 80
+    },
+    {
+      "id": "SKU-1057",
+      "name": "Aero Tee 57",
+      "category": "Training",
+      "color": "Grey",
+      "price": 216.77,
+      "stock": 413
+    },
+    {
+      "id": "SKU-1058",
+      "name": "Core Runner 58",
+      "category": "Lifestyle",
+      "color": "Blue",
+      "price": 206.35,
+      "stock": 53
+    },
+    {
+      "id": "SKU-1059",
+      "name": "Pro Boot 59",
+      "category": "Running",
+      "color": "Black",
+      "price": 168.48,
+      "stock": 79
+    },
+    {
+      "id": "SKU-1060",
+      "name": "Flex Boot 60",
+      "category": "Lifestyle",
+      "color": "White",
+      "price": 163.52,
+      "stock": 104
+    },
+    {
+      "id": "SKU-1061",
+      "name": "Flex Tee 61",
+      "category": "Outdoor",
+      "color": "Blue",
+      "price": 201.07,
+      "stock": 433
+    },
+    {
+      "id": "SKU-1062",
+      "name": "Ultra Runner 62",
+      "category": "Outdoor",
+      "color": "Blue",
+      "price": 28.82,
+      "stock": 170
+    },
+    {
+      "id": "SKU-1063",
+      "name": "Pro Boot 63",
+      "category": "Football",
+      "color": "Red",
+      "price": 130.34,
+      "stock": 218
+    },
+    {
+      "id": "SKU-1064",
+      "name": "Core Runner 64",
+      "category": "Running",
+      "color": "Black",
+      "price": 209.01,
+      "stock": 353
+    },
+    {
+      "id": "SKU-1065",
+      "name": "Pro Tee 65",
+      "category": "Running",
+      "color": "Blue",
+      "price": 136.5,
+      "stock": 75
+    },
+    {
+      "id": "SKU-1066",
+      "name": "Aero Trainer 66",
+      "category": "Running",
+      "color": "Blue",
+      "price": 92.93,
+      "stock": 477
+    },
+    {
+      "id": "SKU-1067",
+      "name": "Ultra Boot 67",
+      "category": "Football",
+      "color": "White",
+      "price": 153.39,
+      "stock": 181
+    },
+    {
+      "id": "SKU-1068",
+      "name": "Core Jacket 68",
+      "category": "Lifestyle",
+      "color": "White",
+      "price": 205.15,
+      "stock": 121
+    },
+    {
+      "id": "SKU-1069",
+      "name": "Pro Trainer 69",
+      "category": "Outdoor",
+      "color": "Black",
+      "price": 55.87,
+      "stock": 473
+    },
+    {
+      "id": "SKU-1070",
+      "name": "Flex Jacket 70",
+      "category": "Football",
+      "color": "Blue",
+      "price": 51.84,
+      "stock": 359
+    },
+    {
+      "id": "SKU-1071",
+      "name": "Ultra Jacket 71",
+      "category": "Running",
+      "color": "Red",
+      "price": 64.49,
+      "stock": 418
+    },
+    {
+      "id": "SKU-1072",
+      "name": "Aero Boot 72",
+      "category": "Training",
+      "color": "White",
+      "price": 64.58,
+      "stock": 337
+    },
+    {
+      "id": "SKU-1073",
+      "name": "Pro Jacket 73",
+      "category": "Training",
+      "color": "Blue",
+      "price": 192.87,
+      "stock": 495
+    },
+    {
+      "id": "SKU-1074",
+      "name": "Flex Boot 74",
+      "category": "Lifestyle",
+      "color": "Red",
+      "price": 155.9,
+      "stock": 431
+    },
+    {
+      "id": "SKU-1075",
+      "name": "Core Boot 75",
+      "category": "Running",
+      "color": "Black",
+      "price": 195.41,
+      "stock": 133
+    },
+    {
+      "id": "SKU-1076",
+      "name": "Pro Tee 76",
+      "category": "Training",
+      "color": "Black",
+      "price": 41.68,
+      "stock": 222
+    },
+    {
+      "id": "SKU-1077",
+      "name": "Flex Boot 77",
+      "category": "Outdoor",
+      "color": "Grey",
+      "price": 216.85,
+      "stock": 59
+    },
+    {
+      "id": "SKU-1078",
+      "name": "Aero Tee 78",
+      "category": "Football",
+      "color": "Blue",
+      "price": 28.88,
+      "stock": 223
+    },
+    {
+      "id": "SKU-1079",
+      "name": "Ultra Tee 79",
+      "category": "Lifestyle",
+      "color": "White",
+      "price": 92.84,
+      "stock": 35
+    },
+    {
+      "id": "SKU-1080",
+      "name": "Flex Tee 80",
+      "category": "Training",
+      "color": "Black",
+      "price": 163.95,
+      "stock": 153
+    },
+    {
+      "id": "SKU-1081",
+      "name": "Core Boot 81",
+      "category": "Outdoor",
+      "color": "Blue",
+      "price": 100.48,
+      "stock": 151
+    },
+    {
+      "id": "SKU-1082",
+      "name": "Core Trainer 82",
+      "category": "Football",
+      "color": "Red",
+      "price": 152.99,
+      "stock": 194
+    },
+    {
+      "id": "SKU-1083",
+      "name": "Pro Tee 83",
+      "category": "Lifestyle",
+      "color": "Blue",
+      "price": 101.22,
+      "stock": 426
+    },
+    {
+      "id": "SKU-1084",
+      "name": "Ultra Boot 84",
+      "category": "Training",
+      "color": "White",
+      "price": 105.98,
+      "stock": 296
+    },
+    {
+      "id": "SKU-1085",
+      "name": "Core Boot 85",
+      "category": "Outdoor",
+      "color": "Red",
+      "price": 108.43,
+      "stock": 109
+    },
+    {
+      "id": "SKU-1086",
+      "name": "Core Jacket 86",
+      "category": "Football",
+      "color": "Black",
+      "price": 76.76,
+      "stock": 339
+    },
+    {
+      "id": "SKU-1087",
+      "name": "Core Boot 87",
+      "category": "Running",
+      "color": "White",
+      "price": 154.56,
+      "stock": 115
+    },
+    {
+      "id": "SKU-1088",
+      "name": "Pro Trainer 88",
+      "category": "Running",
+      "color": "Black",
+      "price": 68.97,
+      "stock": 243
+    },
+    {
+      "id": "SKU-1089",
+      "name": "Core Runner 89",
+      "category": "Outdoor",
+      "color": "Red",
+      "price": 197.23,
+      "stock": 294
+    },
+    {
+      "id": "SKU-1090",
+      "name": "Pro Jacket 90",
+      "category": "Outdoor",
+      "color": "Red",
+      "price": 68.8,
+      "stock": 335
+    },
+    {
+      "id": "SKU-1091",
+      "name": "Ultra Runner 91",
+      "category": "Outdoor",
+      "color": "White",
+      "price": 55.18,
+      "stock": 490
+    },
+    {
+      "id": "SKU-1092",
+      "name": "Core Jacket 92",
+      "category": "Running",
+      "color": "Grey",
+      "price": 69.84,
+      "stock": 434
+    },
+    {
+      "id": "SKU-1093",
+      "name": "Ultra Jacket 93",
+      "category": "Football",
+      "color": "Red",
+      "price": 153.52,
+      "stock": 286
+    },
+    {
+      "id": "SKU-1094",
+      "name": "Core Boot 94",
+      "category": "Outdoor",
+      "color": "Grey",
+      "price": 183.0,
+      "stock": 456
+    },
+    {
+      "id": "SKU-1095",
+      "name": "Core Jacket 95",
+      "category": "Lifestyle",
+      "color": "Red",
+      "price": 199.44,
+      "stock": 380
+    },
+    {
+      "id": "SKU-1096",
+      "name": "Aero Jacket 96",
+      "category": "Training",
+      "color": "White",
+      "price": 187.97,
+      "stock": 141
+    },
+    {
+      "id": "SKU-1097",
+      "name": "Core Jacket 97",
+      "category": "Football",
+      "color": "Blue",
+      "price": 107.97,
+      "stock": 365
+    },
+    {
+      "id": "SKU-1098",
+      "name": "Flex Trainer 98",
+      "category": "Training",
+      "color": "Blue",
+      "price": 83.94,
+      "stock": 276
+    },
+    {
+      "id": "SKU-1099",
+      "name": "Ultra Trainer 99",
+      "category": "Football",
+      "color": "White",
+      "price": 96.61,
+      "stock": 78
+    }
+  ]
+}
