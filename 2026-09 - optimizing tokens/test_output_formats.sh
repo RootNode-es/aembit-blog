@@ -1,5 +1,5 @@
 #!/bin/bash
-A="Review make_samples.py and suggest improvements."
+A="Review generate_products.py and suggest improvements."
 
 for run in 1 2 3; do
   echo "== Run $run"
