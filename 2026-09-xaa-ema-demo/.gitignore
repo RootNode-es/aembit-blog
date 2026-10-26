@@ -1,0 +1,6 @@
+.env
+keys/
+audit.log
+resource_as/users.json
+__pycache__/
+.venv/
