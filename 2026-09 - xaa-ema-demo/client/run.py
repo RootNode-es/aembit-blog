@@ -140,7 +140,6 @@ def request_id_jag(okta: dict, tokens: dict, subject: str) -> str:
             "subject_token": subject_token,
             "subject_token_type": subject_type,
             "audience": RESOURCE_AS_ISSUER,   # who will redeem it
-            "resource": MCP_RESOURCE,         # what it is for
             "scope": SCOPES,
             "client_id": OKTA_CLIENT_ID,      # client_secret_post, as in Okta's guide
             "client_secret": OKTA_CLIENT_SECRET,
