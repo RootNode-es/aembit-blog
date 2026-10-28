@@ -1,9 +1,9 @@
 """Requesting app (the MCP client): runs the full Cross App Access / EMA flow against Okta.
 
-  Step 1  OIDC sign-in at Okta (authorization code + PKCE)       -> ID token + refresh token
-  Step 2  Token exchange at Okta (RFC 8693)                       -> ID-JAG
-  Step 3  jwt-bearer grant at the resource AS (RFC 7523)          -> MCP access token
-  Step 4  Call MCP tools with the access token
+  Step 3  OIDC sign-in at Okta (authorization code + PKCE)       -> ID token + refresh token
+  Step 5  Token exchange at Okta (RFC 8693)                       -> ID-JAG
+  Step 7  jwt-bearer grant at the resource AS (RFC 7523)          -> MCP access token
+  Step 9  Call MCP tools with the access token
 
 Run:  python -m client.run            (opens your browser for the Okta sign-in)
       python -m client.run --subject id_token   (exchange the ID token instead, as in the MCP spec)
@@ -58,7 +58,7 @@ def fail(step: str, response: httpx.Response) -> None:
     raise SystemExit(f"\n{step} failed ({response.status_code}): {response.text}")
 
 
-# ── Step 1: sign in ──────────────────────────────────────────────────────────
+# ── Step 3: sign in ──────────────────────────────────────────────────────────
 def sign_in(okta: dict) -> dict:
     verifier = secrets.token_urlsafe(48)
     challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).rstrip(b"=").decode()
@@ -88,7 +88,7 @@ def sign_in(okta: dict) -> dict:
     if r.status_code != 200:
         fail("Sign-in token request", r)
     tokens = r.json()
-    show_jwt("Step 1: ID token from Okta", tokens["id_token"])
+    show_jwt("Step 3: ID token from Okta", tokens["id_token"])
     if "refresh_token" not in tokens:
         print("\n(no refresh token returned: enable the Refresh Token grant on the Okta app)")
     return tokens
@@ -126,7 +126,7 @@ def _wait_for_code(authorize_url: str, expected_state: str) -> str:
     return result["code"]
 
 
-# ── Step 2: ask the IdP for an ID-JAG ────────────────────────────────────────
+# ── Step 5: ask the IdP for an ID-JAG ────────────────────────────────────────
 def request_id_jag(okta: dict, tokens: dict, subject: str) -> str:
     if subject == "refresh_token":
         subject_token, subject_type = tokens["refresh_token"], TOKEN_TYPE_REFRESH
@@ -150,11 +150,11 @@ def request_id_jag(okta: dict, tokens: dict, subject: str) -> str:
     body = r.json()
     print(f"\nissued_token_type: {body.get('issued_token_type')}")
     id_jag = body["access_token"]  # the ID-JAG is returned in the access_token field
-    show_jwt("Step 2: ID-JAG from Okta", id_jag)
+    show_jwt("Step 5: ID-JAG from Okta", id_jag)
     return id_jag
 
 
-# ── Step 3: redeem the ID-JAG at the resource AS ─────────────────────────────
+# ── Step 7: redeem the ID-JAG at the resource AS ─────────────────────────────
 def redeem_id_jag(id_jag: str) -> str:
     resource_as = discover(RESOURCE_AS_ISSUER, "oauth-authorization-server")
     r = httpx.post(
@@ -165,11 +165,11 @@ def redeem_id_jag(id_jag: str) -> str:
     if r.status_code != 200:
         fail("ID-JAG redemption", r)
     access_token = r.json()["access_token"]
-    show_jwt("Step 3: access token from the resource AS", access_token)
+    show_jwt("Step 7: access token from the resource AS", access_token)
     return access_token
 
 
-# ── Step 4: use it ───────────────────────────────────────────────────────────
+# ── Step 9: use it ───────────────────────────────────────────────────────────
 async def call_mcp(access_token: str) -> None:
     import httpx2
     from mcp.client.session import ClientSession
@@ -181,7 +181,7 @@ async def call_mcp(access_token: str) -> None:
             async with ClientSession(read, write) as session:
                 await session.initialize()
                 tools = await session.list_tools()
-                print("\n── Step 4: MCP tools:", ", ".join(t.name for t in tools.tools))
+                print("\n── Step 9: MCP tools:", ", ".join(t.name for t in tools.tools))
                 calls = [
                     ("whoami", {}),
                     ("add_note", {"text": "XAA flow worked"}),
