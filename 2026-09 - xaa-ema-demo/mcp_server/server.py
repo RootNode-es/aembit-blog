@@ -86,7 +86,7 @@ class Denied(Exception):
 _writes: dict[str, deque[float]] = defaultdict(deque)
 
 
-def authorize(tool: str, args: dict, *, scope: str, role: str | None = None,
+def authorize(tool: str, args: dict, *, scope: str,
               write: bool = False, needs_confirmation: bool = False) -> dict:
     """Evaluate one tool call and write an attributed audit record either way."""
     token = get_access_token()
@@ -106,8 +106,6 @@ def authorize(tool: str, args: dict, *, scope: str, role: str | None = None,
         reason = f"missing scope {scope}"
     elif needs_confirmation and args.get("confirm") is not True:
         reason = "destructive action requires explicit user confirmation (confirm=true)"
-    elif role and role not in claims.get("roles", []):
-        reason = f"requires role {role}"
     elif write:
         window = _writes[principal["user"]]
         now = time.monotonic()
@@ -151,7 +149,7 @@ def whoami() -> dict:
     """Show the identity this server sees for the caller."""
     token = get_access_token()
     claims = token.claims if token and token.claims else {}
-    return {k: claims.get(k) for k in ("sub", "idp_sub", "client_id", "scope", "roles", "agent")}
+    return {k: claims.get(k) for k in ("sub", "idp_sub", "client_id", "scope", "agent")}
 
 
 @mcp.tool()
@@ -164,23 +162,23 @@ def list_notes() -> list[str] | str:
 
 
 @mcp.tool()
+def delete_all_notes(confirm: bool = False) -> str:
+    """Delete every note. Requires notes.write and explicit confirmation."""
+    def run():
+        p = authorize("delete_all_notes", {"confirm": confirm}, scope="notes.write",
+                      write=True, needs_confirmation=True)
+        count = len(NOTES.pop(p["user"], []))
+        return f"deleted {count} notes"
+    return _guard(run)
+
+
+@mcp.tool()
 def add_note(text: str) -> str:
     """Add a note."""
     def run():
         p = authorize("add_note", {"text": text}, scope="notes.write", write=True)
         NOTES[p["user"]].append(text)
         return f"added ({len(NOTES[p['user']])} notes)"
-    return _guard(run)
-
-
-@mcp.tool()
-def delete_all_notes(confirm: bool = False) -> str:
-    """Delete every note. Admin only, and only with explicit confirmation."""
-    def run():
-        p = authorize("delete_all_notes", {"confirm": confirm}, scope="notes.write",
-                      role="admin", write=True, needs_confirmation=True)
-        count = len(NOTES.pop(p["user"], []))
-        return f"deleted {count} notes"
     return _guard(run)
 
 

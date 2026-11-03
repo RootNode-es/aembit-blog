@@ -122,7 +122,6 @@ async def token(request: Request) -> JSONResponse:
             "sub": user["id"],               # OUR user id, not the IdP's
             "client_id": client_id,
             "scope": " ".join(sorted(scopes)),
-            "roles": user["roles"],
             "idp_sub": claims["sub"],        # kept for audit correlation with the IdP
             "iat": now,
             "exp": now + ACCESS_TOKEN_TTL,

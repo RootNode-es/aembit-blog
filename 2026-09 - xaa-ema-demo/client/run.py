@@ -184,9 +184,9 @@ async def call_mcp(access_token: str) -> None:
                 print("\n── Step 9: MCP tools:", ", ".join(t.name for t in tools.tools))
                 calls = [
                     ("whoami", {}),
+                    ("list_notes", {}),                    
                     ("add_note", {"text": "XAA flow worked"}),
                     ("list_notes", {}),
-                    ("delete_all_notes", {}),                 # no confirmation -> denied
                     ("delete_all_notes", {"confirm": True}),  # not an admin -> denied
                 ]
                 for name, args in calls:
